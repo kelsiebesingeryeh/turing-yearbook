@@ -1,1 +1,7 @@
-
+.staffCards {
+       display: flex;
+       flex-direction: column;
+       padding: 2rem;
+       background: white;
+       border-radius: 10px;
+}
