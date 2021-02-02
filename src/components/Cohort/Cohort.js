@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import Person from '../Person/Person'
 import './Cohort.css'
 
@@ -10,7 +10,8 @@ const Cohort = (props) => {
         />
     })
     return (
-    <section>Staff
+    <section>
+        <h2>Staff</h2>
         {staffOnDisplay}
     </section>
     )
