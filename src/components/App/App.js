@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Cohort from '../Cohort/Cohort'
+import Form from '../Form/Form'
 import people from '../../data/yearbook-data.js'
 import './App.css'
 
@@ -12,6 +13,12 @@ class App extends Component {
     }
   }
 
+  addStudent = (student) => {
+    this.setState({
+      students: [...this.state.students, student]
+    })
+  }
+
   render() {
     return (
       <div className="App">
@@ -19,6 +26,7 @@ class App extends Component {
         <h1>Turing Yearbook</h1>
       </header>
       <h2 style={{color: 'blue'}}>Staff</h2>
+        <Form addStudent={this.addStudent} />
         <Cohort cohorts={this.state} />
       </div>
     );

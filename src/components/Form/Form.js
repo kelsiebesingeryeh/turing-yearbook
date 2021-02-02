@@ -1,6 +1,7 @@
 import { Component } from "react"
+import React from 'react'
 
-class Form extends Component() {
+class Form extends Component {
     constructor() {
         super()
         this.state = {
@@ -43,10 +44,4 @@ class Form extends Component() {
     }
 }
 
-
-
 export default Form
-
-//pseudocode
-// create form class
-// add a setstate to the app 
