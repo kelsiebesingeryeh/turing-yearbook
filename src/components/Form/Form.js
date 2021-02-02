@@ -9,6 +9,24 @@ class Form extends Component() {
         }
     }
 
+    handleChange = (event) => {
+        this.setState({
+            [event.target.name]: event.target.value
+        })
+    }
+
+    handleSubmit = (event) => {
+        event.preventDefault()
+
+        const newStudent = {
+            id: Date.now(),
+            name: this.state.name,
+            img: this.state.img
+        }
+
+        this.props.addStudent(newStudent)
+    }
+
     render() {
         return (
             <form>
