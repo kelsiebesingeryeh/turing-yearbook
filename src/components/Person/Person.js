@@ -9,6 +9,7 @@ const Person = (props) => {
             <p style={{fontStyle: 'italic'}}>{props.people.quote}</p>
             <p style={{color: 'blue', fontWeight: 'bold'}}>{props.people.superlative}</p>
         </div>
+        
     )
 }
 
