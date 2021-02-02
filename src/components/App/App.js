@@ -20,7 +20,6 @@ class App extends Component {
       </header>
       <h2 style={{color: 'blue'}}>Staff</h2>
         <Cohort cohorts={this.state} />
-        {/* <Cohort students={this.state.students} /> */}
       </div>
     );
   }
