@@ -10,8 +10,7 @@ const Cohort = (props) => {
         />
     })
     return (
-    <section>
-        <h2>Staff</h2>
+    <section className="cardContainer">
         {staffOnDisplay}
     </section>
     )

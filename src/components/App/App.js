@@ -17,6 +17,7 @@ class App extends Component {
       <header className="App-header">
         <h1>Turing Yearbook</h1>
       </header>
+      <h2 style={{color: 'blue'}}>Staff</h2>
         <Cohort 
         staff={this.state.staff}/>
       </div>
