@@ -1,47 +1,60 @@
-import { Component } from "react"
-import React from 'react'
+import React, { Component } from "react"
 
 class Form extends Component {
-    constructor() {
-        super()
-        this.state = {
-            name: '',
-            img: ''
-        }
-    }
+  constructor() {
+    super();
+    this.state = {
+      name: '',
+      img: '',
+    };
+  }
 
-    handleChange = (event) => {
-        this.setState({
-            [event.target.name]: event.target.value
-        })
-    }
+  handleChange = (event) => {
+    this.setState({
+      [event.target.name]: event.target.value,
+    });
+  };
 
-    handleSubmit = (event) => {
-        event.preventDefault()
+  submitIdea = (event) => {
+    event.preventDefault();
 
-        const newStudent = {
-            id: Date.now(),
-            name: this.state.name,
-            img: this.state.img
-        }
+    const newStaff = {
+      id: Date.now(),
+      ...this.state,
+    };
 
-        this.props.addStudent(newStudent)
-    }
+    this.props.addStaff(newStaff);
+    this.clearInputs();
+  };
 
-    render() {
-        return (
-            <form>
-                <input 
-                type="text"
-                name="name"
-                placeholder="Student Name"
-                value={this.state.name}
-                onChange={(event) => this.handleChange(event)}
-                />
-                <button onClick={(event) => this.handleSubmit(event)}>Submit</button>
-            </form>
-        )
-    }
+  clearInputs = () => {
+    this.setState({
+      name: '',
+      img: '',
+    });
+  };
+
+  render() {
+    return (
+      <form>
+        <input
+          type="text"
+          placeholder="Staff Name"
+          name="name"
+          value={this.state.name}
+          onChange={this.handleChange}
+        />
+        <input
+          type="text"
+          placeholder="Image"
+          name="img"
+          value={this.state.img}
+          onChange={this.handleChange}
+        />
+        <button onClick={this.submitIdea}>SUBMIT</button>
+      </form>
+    );
+  }
 }
 
 export default Form
